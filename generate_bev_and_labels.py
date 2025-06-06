@@ -202,9 +202,7 @@ IMG_HEIGHT = 2000
 AXES_LIMIT = 40  # meter → [-40, +40]  80x80 m
 
 def convert_to_yolo_coords(x, y, w, h):
-    # ⚠️ SCAMBIARE x <-> y e w <-> h
-    x, y = y, x
-    w, h = h, w
+    y=-y
 
     x_px = (x + AXES_LIMIT) / (2 * AXES_LIMIT)
     y_px = (y + AXES_LIMIT) / (2 * AXES_LIMIT)
