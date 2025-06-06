@@ -6,7 +6,7 @@ This project focuses on object detection using Bird’s Eye View (BEV) images ge
 
 For more information and to explore the source dataset in detail, refer to the \\TODO ADD PAPER.
 
----
+--
 
 ### 📦 Dataset and training summary
 
@@ -15,7 +15,7 @@ The model was trained using the Ultralytics YOLOv8 framework in two steps: an in
 
 \\TODO ADD IMAGES
 
----
+--
 
 ### 🧪 Testing and evaluation
 
@@ -51,7 +51,7 @@ The notebook includes two validation blocks to evaluate and compare performance:
 | Pretrained YOLOv8      |  XX.X%  |     XX.X%    |   XX.X%   | XX.X%  |
 | Custom-trained YOLOv8  |  **YY.Y%**  |     **YY.Y%**    |   **YY.Y%**   | **YY.Y%**  |
 
----
+--
 
 ### 🖼️ Visual testing on example images
 
