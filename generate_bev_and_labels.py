@@ -202,18 +202,22 @@ IMG_HEIGHT = 2000
 AXES_LIMIT = 40  # meter → [-40, +40]  80x80 m
 
 def convert_to_yolo_coords(x, y, w, h):
+    # ⚠️ SCAMBIARE x <-> y e w <-> h
+    x, y = y, x
+    w, h = h, w
+
     x_px = (x + AXES_LIMIT) / (2 * AXES_LIMIT)
     y_px = (y + AXES_LIMIT) / (2 * AXES_LIMIT)
     w_px = w / (2 * AXES_LIMIT)
     h_px = h / (2 * AXES_LIMIT)
 
-    # Clipping tra 0 e 1
     x_px = np.clip(x_px, 0.0, 1.0)
     y_px = np.clip(y_px, 0.0, 1.0)
     w_px = np.clip(w_px, 0.0, 1.0)
     h_px = np.clip(h_px, 0.0, 1.0)
 
     return x_px, y_px, w_px, h_px
+
 
 
 def save_yolo_labels(trucksc, sample_token, out_dir="DATASET/label", class_map=None):
