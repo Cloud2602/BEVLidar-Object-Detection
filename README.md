@@ -12,7 +12,7 @@ For more information and to explore the source dataset in detail, refer to the \
 The dataset was generated using the `generate_bev_and_labels.py` script, which converts LiDAR point clouds into BEV images with and without Z-axis filtering. YOLOv8-compatible annotations were also produced.  
 The model was trained using the Ultralytics YOLOv8 framework in two steps: an initial pretraining phase with a frozen backbone, followed by full fine-tuning with data augmentation.
 
-![Dataset image](example_dataset.png) ![Dataset filtered image](example_dataset_filtered.png)
+![Dataset image](dataset_exaple.png) ![Dataset filtered image](dataset_example_filtered.png)
 
 
 ## 🧪 Testing and evaluation
