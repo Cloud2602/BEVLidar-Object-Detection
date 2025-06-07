@@ -13,12 +13,10 @@ The dataset was generated using the `generate_bev_and_labels.py` script, which c
 The model was trained using the Ultralytics YOLOv8 framework in two steps: an initial pretraining phase with a frozen backbone, followed by full fine-tuning with data augmentation.
 
 <p align="center">
-  <img src="dataset_exaple.png" alt="Image 1" width="45%">
-  <img src="dataset_example_filtered.png" alt="Image 2" width="45%">
+  <img src="dataset_exaple.png" alt="Image 1" width="35%">
+  <img src="dataset_example_filtered.png" alt="Image 2" width="35%">
 </p>
 
-
-![Dataset image](dataset_exaple.png) ![Dataset filtered image](dataset_example_filtered.png)
 
 
 ## 🧪 Testing and evaluation
