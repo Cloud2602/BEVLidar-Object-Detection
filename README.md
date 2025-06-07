@@ -4,7 +4,7 @@ This project focuses on object detection using Bird’s Eye View (BEV) images ge
 
 ### 📄 Paper reference
 
-For more information and to explore the source dataset in detail, refer to the \\TODO ADD PAPER.
+For more information and to explore the source dataset in detail, refer to the //ADD PAPER
 
 
 ## 📦 Dataset and training summary
@@ -13,30 +13,40 @@ The dataset was generated using the `generate_bev_and_labels.py` script, which c
 The model was trained using the Ultralytics YOLOv8 framework in two steps: an initial pretraining phase with a frozen backbone, followed by full fine-tuning with data augmentation.
 
 <p align="center">
-  <img src="dataset_exaple.png" alt="Image 1" width="35%">
-  <img src="dataset_example_filtered.png" alt="Image 2" width="35%">
+  <img src="images/dataset_exaple.png" alt="Image 1" width="35%">
+  <img src="images/dataset_example_filtered.png" alt="Image 2" width="35%">
 </p>
 
 
 
 ## 🧪 Testing and evaluation
+- Open the [Colab Notebook](BEVLidar_ObjectDetection.ipynb).
 
-To test the models, open the notebook and navigate to the section titled **YOLO Testing**.
+
+- Download the truckscenes dataset and initialize the dataset in the section **Download Dataset** and **Initialization** in the notebook.
+
+- To test the models, open the notebook and navigate to the section titled **YOLO Testing**.
 
 #### ▶️ Setup and run
 
-Install the required dependencies and download the dataset and model weights:
+Install the required dependencies and download the dataset and model weights (code already present in the section):
 
 ```bash
 !pip install ultralytics
+
 !pip install -U gdown
 
-# Download and unzip dataset
-!gdown 'https://drive.google.com/uc?id=YOUR_DATASET_ID'
-!unzip -q DATASET_FINISHED.zip -d DATASET
+!gdown "https://drive.google.com/uc?id=1NYUZYKDO-yAuqKjEQ0mQgRYGubt2aPPl"
+!gdown "https://drive.google.com/uc?id=1eBZLkrGRM3ixVrTVrZYwjLyOoYeH8COu"
 
-# Download trained model weights
-!gdown 'https://drive.google.com/uc?id=YOUR_WEIGHTS_ID'
+
+!unzip -q DATASET_COMPLETE.zip -d TEMP
+!mkdir -p DATASET
+!mv TEMP/DATASET_COMPLETE/* DATASET/
+!rm -r TEMP
+
+
+
 ```
 
 ### 📊 Model validation
@@ -46,16 +56,21 @@ The notebook includes two validation blocks to evaluate and compare performance:
 - **Results from YOLO model**: validation of a pretrained YOLOv8 model  
 - **Results from my trained YOLO model**: validation of the custom-trained model on BEV data
 
-#### 📈 Metrics comparison  \\TODO ADD METRICS
+#### 📈 Metrics comparison 
 
 | Model                   | mAP@0.5 | mAP@0.5:0.95 | Precision | Recall |
 |------------------------|---------|--------------|-----------|--------|
-| Pretrained YOLOv8      |  XX.X%  |     XX.X%    |   XX.X%   | XX.X%  |
-| Custom-trained YOLOv8  |  **YY.Y%**  |     **YY.Y%**    |   **YY.Y%**   | **YY.Y%**  |
+| Pretrained YOLOv8      |  1.6%  |     0.6%    |   2.5%   | 4.6%  |
+| Custom-trained YOLOv8  |  **88%**  |     **71%**    |   **92%**   | **85%**  |
 
 
 ### 🖼️ Visual testing on example images
 
 The last section of the notebook allows testing the trained model on three selected BEV images. The predictions are visually compared with the ground truth annotations.
 
-\\TODO ADD IMAGES
+<p align="center">
+  <img src="images/predition.png" alt="Image 1" width="45%">
+  <img src="images/predition1.png" alt="Image 2" width="45%">
+</p>
+
+
