@@ -4,7 +4,7 @@ This project focuses on object detection using Bird’s Eye View (BEV) images ge
 
 ### 📄 Paper reference
 
-For more information and to explore the source dataset in detail, refer to the //ADD PAPER
+For more information and to explore the source dataset in detail, refer to the (paper)[BEV_Object_Detection.pdf].
 
 
 ## 📦 Dataset and training summary
